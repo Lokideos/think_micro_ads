@@ -9,6 +9,7 @@ require 'fast_jsonapi'
 
 require_relative 'roda_tree'
 require_relative 'config'
+require_relative 'serializers/ad_serializer'
 
 module Ads
   class Application
