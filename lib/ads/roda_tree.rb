@@ -8,6 +8,10 @@ module Ads
       r.root do
         '<h1>The RODA root</h1>'
       end
+
+      r.on 'favicon.ico' do
+        'no_icon'
+      end
     end
   end
 end
