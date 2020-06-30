@@ -14,7 +14,7 @@ module Ads
     include Singleton
 
     def bootstrap!
-      @configuration = Ads::Config.new
+      @db_configuration = Ads::DbConfig.new
       Ads::RodaTree.app
     end
 
