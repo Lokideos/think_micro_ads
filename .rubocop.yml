@@ -21,6 +21,8 @@ Metrics/LineLength:
   Max: 100
   Exclude:
     - 'db/seeds.rb'
+Metrics/MethodLength:
+  Max: 15
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
