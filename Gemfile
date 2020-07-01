@@ -15,5 +15,6 @@ gem 'dry-initializer', '~> 3.0.3'
 group :development, :test do
   gem 'pry-byebug',      '~> 3.9.0'
   gem 'rspec',           '~> 3.9.0'
+  gem 'fabrication',     '~> 2.21.0'
   gem 'rack-unreloader', '~> 1.7.0'
 end
