@@ -35,7 +35,7 @@ module Ads
 
             serializer.serialized_json
           else
-            error_response(result.errors, 422)
+            error_response(result.errors, 422).to_json
           end
         end
       end
