@@ -10,6 +10,7 @@ gem 'sequel', '~> 5.33.0'
 gem 'pg',     '~> 1.2.0'
 gem 'fast_jsonapi', '~> 1.5'
 gem 'pry',    '~> 0.13.0'
+gem 'dry-initializer', '~> 3.0.3'
 
 group :development, :test do
   gem 'pry-byebug',      '~> 3.9.0'
