@@ -10,11 +10,11 @@ module Ads
     attr_config :url, :db_name
 
     def url
-      @url ||= "postgres://#{user}:#{password}@#{host}:#{port}"
+      @url ||= "postgres://#{user}:#{password}@#{host}:#{port}/#{db_name}"
     end
 
     def test_url
-      @test_url ||= "postgres://#{user}:#{password}@#{host}:#{port}"
+      @test_url ||= "postgres://#{user}:#{password}@#{host}:#{port}/#{test_db_name}"
     end
 
     def db_name
