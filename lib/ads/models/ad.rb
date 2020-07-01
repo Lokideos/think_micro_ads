@@ -13,7 +13,7 @@ class Ad < Sequel::Model
 
   class << self
     def page(page: nil)
-      return Ad.reverse_order(:updated_at).limit(RECORDS_PER_PAGE).all if page <= 0 || page.blank?
+      return Ad.reverse_order(:updated_at).limit(RECORDS_PER_PAGE).all if page.blank? || page <= 0
 
       Ad.reverse_order(:updated_at).offset(page * RECORDS_PER_PAGE).limit(RECORDS_PER_PAGE).all
     end
