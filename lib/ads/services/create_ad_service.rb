@@ -18,6 +18,7 @@ module Ads
       @ad.validate
       return fail!(@ad.errors) if @ad.errors.any?
 
+      GeocoderService.call
       @ad.save
     end
   end

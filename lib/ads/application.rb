@@ -16,6 +16,7 @@ require_relative 'serializers/error_serializer'
 
 require_relative 'services/basic_service'
 require_relative 'services/create_ad_service'
+require_relative 'services/geocoder_service'
 
 module Ads
   class Application
