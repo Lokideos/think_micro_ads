@@ -13,8 +13,16 @@ module Ads
       @url ||= "postgres://#{user}:#{password}@#{host}:#{port}"
     end
 
+    def test_url
+      @test_url ||= "postgres://#{user}:#{password}@#{host}:#{port}"
+    end
+
     def db_name
       @db_name ||= "ads_db_#{ENV['RACK_ENV']}"
+    end
+
+    def test_db_name
+      @test_db_name ||= 'ads_db_test'
     end
   end
 end
