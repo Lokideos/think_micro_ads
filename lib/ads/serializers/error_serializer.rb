@@ -5,7 +5,8 @@ module Ads
     extend self
 
     def from_messages(error_messages, meta: {})
-      { errors: build_errors(error_messages, meta) }.to_json
+      error_messages = [error_messages] unless error_messages.is_a? Array
+      { errors: build_errors(error_messages, meta) }
     end
     alias from_message from_messages
 
