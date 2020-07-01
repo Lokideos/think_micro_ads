@@ -8,16 +8,27 @@ class Ad < Sequel::Model
 
   def validate
     super
-    validate_presence %i[title description city]
+    validates_presence %i[title description city user_id]
   end
 
-  def self.page(page: nil)
-    return Ad.reverse_order(:updated_at).limit(RECORDS_PER_PAGE).all if page <= 0 || page.blank?
+  class << self
+    def page(page: nil)
+      return Ad.reverse_order(:updated_at).limit(RECORDS_PER_PAGE).all if page <= 0 || page.blank?
 
-    Ad.reverse_order(:updated_at).offset(page * RECORDS_PER_PAGE).limit(RECORDS_PER_PAGE).all
-  end
+      Ad.reverse_order(:updated_at).offset(page * RECORDS_PER_PAGE).limit(RECORDS_PER_PAGE).all
+    end
 
-  def self.total_pages
-    Ad.reverse_order(:updated_at).count / RECORDS_PER_PAGE + 1
+    def total_pages
+      Ad.reverse_order(:updated_at).count / RECORDS_PER_PAGE + 1
+    end
+
+    def sanitized_params(request_params)
+      {
+        title: request_params['title'],
+        description: request_params['description'],
+        city: request_params['city'],
+        user_id: request_params['user_id']
+      }
+    end
   end
 end

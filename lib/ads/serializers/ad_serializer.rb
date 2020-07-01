@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-class AdSerializer
-  include FastJsonapi::ObjectSerializer
+module Ads
+  class AdSerializer
+    include FastJsonapi::ObjectSerializer
 
-  attributes :title,
-             :description,
-             :city,
-             :lat,
-             :lon
+    attributes :title,
+               :description,
+               :city,
+               :lat,
+               :lon
+  end
 end

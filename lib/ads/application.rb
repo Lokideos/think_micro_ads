@@ -6,10 +6,16 @@ require 'anyway_config'
 require 'sequel'
 require 'pry-byebug'
 require 'fast_jsonapi'
+require 'dry-initializer'
 
 require_relative 'roda_tree'
 require_relative 'config'
+
 require_relative 'serializers/ad_serializer'
+require_relative 'serializers/error_serializer'
+
+require_relative 'services/basic_service'
+require_relative 'services/create_ad_service'
 
 module Ads
   class Application
