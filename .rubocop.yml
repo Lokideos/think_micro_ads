@@ -22,6 +22,15 @@ Metrics/LineLength:
   Exclude:
     - 'db/seeds.rb'
 
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/BlockLength:
+  Max: 25
+  Exclude:
+    - 'lib/ads/roda_tree.rb'
+    - '**/spec/**/*'
+
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
